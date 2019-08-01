@@ -10,9 +10,7 @@ import { UsersService } from '../services/users.service';
 
 @Injectable()
 export class UsersEffects {
-  constructor(private usersService: UsersService, private actions$: Actions) {
-    console.log('USEREffects');
-  }
+  constructor(private usersService: UsersService, private actions$: Actions) {}
 
   loadUsers$ = createEffect(() => this.actions$.pipe(
     ofType(UsersActions.loadUsers),
