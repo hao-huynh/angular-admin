@@ -5,7 +5,12 @@ export const getUsersState = createFeatureSelector<UsersState>('users');
 
 export const getUsers = createSelector(
   getUsersState,
-  users => users.data
+  users => users.users
+);
+
+export const getSelectedUser = createSelector(
+  getUsersState,
+  users => users.selectedUser
 );
 
 export const getLoading = createSelector(

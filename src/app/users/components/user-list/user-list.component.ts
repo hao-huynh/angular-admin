@@ -16,7 +16,10 @@ export class UserListComponent implements OnInit {
   error$: Observable<any>;
   loading$: Observable<boolean>;
   columnDefs = [
-    {headerName: 'Id', field: 'id' },
+    {
+      headerName: 'Id',
+      field: 'id',
+      cellRenderer: ({value}) => `<a href="/users/${value}" >${value}</a>` },
     {headerName: 'Name', field: 'name', sortable: true },
     {headerName: 'Username', field: 'username', sortable: true},
     {headerName: 'Email', field: 'email'},

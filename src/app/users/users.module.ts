@@ -7,9 +7,10 @@ import * as fromUsers from './store/users.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { UsersEffects } from './store/users.effects';
 import {AgGridModule} from 'ag-grid-angular';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 @NgModule({
-  declarations: [UserListComponent],
+  declarations: [UserListComponent, UserDetailComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,

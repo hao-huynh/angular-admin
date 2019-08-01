@@ -1,0 +1,24 @@
+<ng-template #loading>LOADING...</ng-template>
+
+<table
+  class="table"
+  *ngIf="(user$ | async) as user; else loading">
+  <tbody>
+  <tr>
+    <th scope="row">Id</th>
+    <td>{{ user.id }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Name</th>
+    <td>{{ user.name }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Username</th>
+    <td>{{ user.username }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Email</th>
+    <td>{{ user.email }}</td>
+  </tr>
+  </tbody>
+</table>

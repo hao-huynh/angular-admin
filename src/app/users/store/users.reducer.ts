@@ -9,8 +9,12 @@ const usersReducer = createReducer(
   initialState,
 
   on(UsersActions.loadUsers, state => ({...state, loading: true, error: null})),
-  on(UsersActions.loadUsersSuccess, (state, { data }) => ({...state, loading: false, error: null, data})),
+  on(UsersActions.loadUsersSuccess, (state, { users }) => ({...state, loading: false, error: null, users})),
   on(UsersActions.loadUsersFailure, (state, { error }) => ({...state, loading: false, error})),
+
+  on(UsersActions.loadUser, state => ({...state, loading: true, error: null})),
+  on(UsersActions.loadUserSuccess, (state, { user }) => ({...state, loading: false, error: null, selectedUser: user})),
+  on(UsersActions.loadUserFailure, (state, { error }) => ({...state, loading: false, error})),
 
 );
 

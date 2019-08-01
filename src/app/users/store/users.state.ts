@@ -1,13 +1,15 @@
 import { User } from '../model/user.model';
 
 export interface UsersState {
-  data?: User[];
+  users?: User[];
+  selectedUser?: User;
   loading: boolean;
   error?: any;
 }
 
 export const initialState: UsersState = {
-  data: null,
+  users: null,
+  selectedUser: null,
   loading: true,
   error: null
 };
